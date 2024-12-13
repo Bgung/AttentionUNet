@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  service:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      - ./:/workspace
+      - ./../../DeepLearningDatasets:/datasets
+      - ./../Final Project/datasets/:/final_project/datasets
+    working_dir: /workspace
+    command: /bin/bash
+    ports:
+      - "8888:8888" # Jupyter Notebook
+      - "6006:6006" # TensorBoard
+
+    shm_size: '16gb' # Increase shared memory size for PyTorch DataLoader

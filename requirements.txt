@@ -1,0 +1,21 @@
+# torch==2.5.0 # Installed with docker already
+# torchvision==0.20.0 # Installed with docker already
+
+# Install pytorch with anaconda
+# conda install pytorch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 pytorch-cuda=12.4 -c pytorch -c nvidia
+
+# Install with anaconda
+pillow
+nibabel
+matplotlib
+pycocotools
+torchmetrics
+pytorch_lightning
+
+tensorboard
+tensorboardX
+
+# Install with pip
+torch-tb-profiler
+opencv-python
+opencv-contrib-python
